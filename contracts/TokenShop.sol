@@ -36,7 +36,7 @@ contract TokenShop{
 
     function tokenAmount(uint amountETH) public view returns(uint256) {
         uint256 ethUsd = uint256(getChainlinkDataFeeds());
-        uint256 amountUsd = amountETH * ethUsd / 10**(8/2);
+        uint256 amountUsd = amountETH * ethUsd / 10**18;
         uint256 amountToken = amountUsd / tokenPrice / 10**(8/2);
         return amountToken;
     }
